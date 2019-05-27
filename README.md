@@ -27,7 +27,8 @@
 
 #### Firebase
 
-ตั้ง Rules ทั้ง `.read` และ `.write` เป็น `true`
+1. เข้าไปยัง `https://console.firebase.google.com/u/0/project/[ชื่อ-Project]/database/[ชื่อ-Project]/rules`
+2. ตั้ง `rules` ทั้ง `.read` และ `.write` เป็น `true`
 
 ```json
 {
