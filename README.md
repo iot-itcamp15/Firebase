@@ -4,7 +4,7 @@
 
 ## Prerequisite
 - `ESP8266` Compatible Board
-- [Firebase Realtime Database](console.firebase.google.com)
+- [Firebase Realtime Database](https://console.firebase.google.com)
 
 ### Library
 
