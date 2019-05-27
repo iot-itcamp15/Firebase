@@ -30,5 +30,40 @@
 #define FIREBASE_AUTH "yourF1rEba5et0ken8QGQ4Q5UZeK78wmtS7Qs466"
 ```
 
-- `FIREBASE_HOST`: ที่อยู่ของ Firebase Realtime Database
-- `FIREBASE AUTH`: Key Database Secrets (อยู่ที่ https://console.firebase.google.com/u/0/project/[ชื่อ-Project]/settings/serviceaccounts/databasesecrets)
+- `FIREBASE_HOST`: ที่อยู่ของ Firebase Realtime Database (อยู่ในรูปแบบ `[ชื่อ-Project].firebaseio.com`)
+- `FIREBASE AUTH`: Database Secrets 40 หลัก (อยู่ที่ `https://console.firebase.google.com/u/0/project/[ชื่อ-Project]/settings/serviceaccounts/databasesecrets`)
+
+## Usage
+
+### การเชื่อมต่อ
+
+**Serial Monitor**
+```
+Connecting.........
+Connected: XXX.XXX.X.X
+```
+หากเชื่อมต่อสำเร็จจะขึ้นดังนี้ใน Serial Monitor (`XXX.XXX.X.X` - จะแสดงเป็น IP ที่เชื่อมต่อ)
+
+### การส่งค่าขึ้น Realtime Database
+
+**Syntax**
+
+```cpp
+Firebase.set[type](ชื่อตัวแปรที่ต้องการตั้ง, ค่าที่ต้องการตั้ง);
+```
+
+- `Firebase.setInt("analog", 1);` - เปลี่ยนค่าจำนวนเต็ม (Int)
+- `Firebase.setFloat("analog", 1.1);` - เปลี่ยนค่าทศนิยม (Floating Point)
+- `Firebase.setString("name", "ITCAMP");` - เปลี่ยนค่า String
+- `Firebase.setBool("status", true);` - เปลี่ยนค่า Boolean
+
+### การรับค่าจาก Realtime Database
+
+```cpp
+Firebase.get[type](ชื่อตัวแปรที่ต้องการรับค่า);
+```
+
+- `Firebase.getInt("analog");` - รับค่าจำนวนเต็ม (Int)
+- `Firebase.getFloat("analog");` - รับค่าทศนิยม (Floating Point)
+- `Firebase.getString("name");` - รับค่า String
+- `Firebase.getBool("status");` - รับค่า Boolean
