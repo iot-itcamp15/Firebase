@@ -8,31 +8,32 @@
 #define FIREBASE_AUTH "yourF1rEba5eaUtht0ken8QGQ4Q5UZeK78wmtS7Q" //Database Secret Key (หาได้จาก - เฟือง > Project Settings > Service accounts > Database Secrets)
 
 void setup(){
-    Serial.begin(115200);
+    Serial.begin(115200); //เริ่ม Serial Monitor ที่ 115200 baud
     
-    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-    Serial.print("Connecting");
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD); //เริ่มเชื่อมต่อ WiFi ด้วยค่าที่กำหนดไว้ที่บรรทัดที่ 4 และ 5
+    Serial.print("Connecting"); //บอกสถานะว่ากำลังเชื่อมต่ออยู่
 
-    while(WiFi.status() != WL_CONNECTED) {
+    while(WiFi.status() != WL_CONNECTED){ //ทำการวนรอบจนกว่า WiFi จะเชื่อมต่อได้
         Serial.print(".");
         delay(500);
     }
+    //เมื่อเชื่อมต่อได้แล้วแสดงที่อยู่ IP ที่เชื่อมต่อ
     Serial.println();
     Serial.print("Connected: ");
     Serial.println(WiFi.localIP());
 
-    Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+    Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH); //เชื่อมต่อ Firebase ด้วยค่าที่กำหนดไว้ที่บรรทัดที่ 7 และ 8
 }
 
 void loop(){
-    Firebase.setInt("analog", 16);
-    Firebase.setFloat("analog", 16.16);
-    Firebase.setString("name", "ITCAMP");
-    Firebase.setBool("status", true);
+    Firebase.setInt("analog", 1); //เปลี่ยนค่าจำนวนเต็ม (Int)
+    Firebase.setFloat("analog", 1.1); //เปลี่ยนค่าทศนิยม (Floating Point)
+    Firebase.setString("name", "ITCAMP"); //เปลี่ยนค่า String
+    Firebase.setBool("status", true); //เปลี่ยนค่า Boolean
 
-    Serial.println(Firebase.getInt("analog"));
-    Serial.println(Firebase.getFloat("analog"));
-    Serial.println(Firebase.getString("name"));
-    Serial.println(Firebase.getBool("status"));
+    Serial.println(Firebase.getInt("analog")); //รับค่าจำนวนเต็ม (Int)
+    Serial.println(Firebase.getFloat("analog")); //รับค่าทศนิยม (Floating Point)
+    Serial.println(Firebase.getString("name")); //รับค่า String
+    Serial.println(Firebase.getBool("status")); //รับค่า Boolean
     delay(1000);
 }
