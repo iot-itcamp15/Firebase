@@ -37,7 +37,7 @@
 
 ### การเชื่อมต่อ
 
-**Serial Monitor**
+**Serial Monitor (`Ctrl` + `Shift` + `M`)**
 ```
 Connecting.........
 Connected: XXX.XXX.X.X
