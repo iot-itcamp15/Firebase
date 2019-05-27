@@ -67,3 +67,8 @@ Firebase.get[type](ชื่อตัวแปรที่ต้องการ�
 - `Firebase.getFloat("analog");` - รับค่าทศนิยม (Floating Point)
 - `Firebase.getString("name");` - รับค่า String
 - `Firebase.getBool("status");` - รับค่า Boolean
+
+## Author
+
+- [phwt](https://github.com/phwt)
+- [maizerocom](https://github.com/maizerocom)
