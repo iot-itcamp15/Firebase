@@ -17,9 +17,11 @@
 ### WiFi Set-up
 
 ```cpp
-#define WIFI_SSID ""
-#define WIFI_PASSWORD ""
+#define WIFI_SSID "SSID_HERE"
+#define WIFI_PASSWORD "PASSWORD_HERE"
 ```
+- `WIFI_SSID`: SSID ของ WiFi
+- `WIFI_PASSWORD`: รหัสผ่านของ WiFi
 
 ### Firebase Set-up
 
@@ -27,3 +29,6 @@
 #define FIREBASE_HOST "your-firebase.firebaseio.com"
 #define FIREBASE_AUTH "yourF1rEba5et0ken8QGQ4Q5UZeK78wmtS7Qs466"
 ```
+
+- `FIREBASE_HOST`: ที่อยู่ของ Firebase Realtime Database
+- `FIREBASE AUTH`: Key Database Secrets (อยู่ที่ https://console.firebase.google.com/u/0/project/[ชื่อ-Project]/settings/serviceaccounts/databasesecrets)
