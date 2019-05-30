@@ -26,14 +26,10 @@ void setup(){
 }
 
 void loop(){
-    Firebase.setInt("analog", 1); //เปลี่ยนค่าจำนวนเต็ม (Int)
-    Firebase.setFloat("analog_f", 1.1); //เปลี่ยนค่าทศนิยม (Floating Point)
-    Firebase.setString("name", "ITCAMP"); //เปลี่ยนค่า String
-    Firebase.setBool("status", true); //เปลี่ยนค่า Boolean
-
-    Serial.println(Firebase.getInt("analog")); //รับค่าจำนวนเต็ม (Int)
-    Serial.println(Firebase.getFloat("analog_f")); //รับค่าทศนิยม (Floating Point)
-    Serial.println(Firebase.getString("name")); //รับค่า String
-    Serial.println(Firebase.getBool("status")); //รับค่า Boolean
+    Firebase.setInt("ITCAMP", 15);
+    
+    int camp_year = Firebase.getInt("ITCAMP");
+    Serial.println(camp_year);
+    
     delay(1000);
 }
